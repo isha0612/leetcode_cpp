@@ -16,12 +16,10 @@ public:
                     while(k > j && nums[k] == h) k--;
                 }
                 else if(nums[i] + nums[j] + nums[k] > 0) {
-                    int h = nums[k];
-                    while(k > j && nums[k] == h) k--;
+                    k--;
                 }
                 else {
-                    int l = nums[j];
-                    while(j < k && nums[j] == l) j++;
+                    j++;
                 }
             }
         }
