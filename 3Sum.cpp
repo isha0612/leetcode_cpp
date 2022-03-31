@@ -3,12 +3,6 @@ public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         vector<vector<int>> sol;
         if(nums.size() < 3) return sol;
-        if(all_of(nums.begin(), nums.end(), [] (int x) {
-            return x == 0;
-        })) {
-            sol = {{0, 0 , 0}};
-            return sol;
-        }
         int n = nums.size();
         sort(nums.begin(), nums.end());
         for(int i = 0; i < n - 2; i++) {
