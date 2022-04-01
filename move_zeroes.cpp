@@ -9,3 +9,17 @@ public:
         for(int i = 0; i < c; i++) nums.push_back(0);
     }
 };
+
+//another solution
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        while(j < nums.size()) {
+            if(nums[j] != 0) {
+                i++;
+                swap(nums[i], nums[j]);
+            }
+            j++;
+        }
+    }
+};
