@@ -21,3 +21,23 @@ public:
         return ans;
     }
 };
+
+//another solution
+class Solution {
+public:
+    int minOperations(vector<string>& logs) {
+        int ans = 0;
+        for(auto v : logs) {
+            if(v == "../") {
+                if(ans > 0) ans -= 1;
+            }
+            else if(v == "./") {
+                continue;
+            }
+            else {
+                ans += 1;
+            }
+        }
+        return ans;
+    }
+};
