@@ -14,7 +14,7 @@ public:
     TreeNode* increasingBST(TreeNode* root) {
         vector<int> v;
         inorder(v, root);
-        TreeNode* head = new TreeNode();
+        TreeNode* head = NULL;
         TreeNode* temp = head;
         for(int i = 0; i < v.size(); i++) {
             TreeNode* q = new TreeNode(v[i]);
@@ -26,7 +26,7 @@ public:
                 temp = q;
             }
         }
-        return head->right;
+        return head;
     }
     void inorder(vector<int> &v, TreeNode* &root) {
         if(root == NULL) return;
