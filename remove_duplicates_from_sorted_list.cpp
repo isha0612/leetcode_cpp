@@ -21,8 +21,6 @@ public:
         for(auto it : s) {
             int i = it;
             ListNode *q = new ListNode(i);
-            // q->val = it; 
-            // q->next = NULL;
             if(!head) head = p = q;
             else {
                 p->next = q;
