@@ -16,3 +16,22 @@ public:
         return ans;
     }
 };
+
+//another solution
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) {
+        int len = nums.size();
+        unordered_map<int, int> sum;
+        int ans = 0; 
+        for(int i = 0; i < len; i++) {
+            if(sum[k - nums[i]]) {
+                sum[k - nums[i]]--;
+                sum[nums[i]]--;
+                ans++;
+            }
+            sum[nums[i]]++;
+        }
+        return ans;
+    }
+};
