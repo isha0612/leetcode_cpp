@@ -41,7 +41,7 @@ public:
                     m[min].push_back(list1[i]);
                 }
                 else if(list1[i] == list2[j] && (i + j) < min) {
-                    m.erase(min);
+                    m.clear();
                     min = i+j;
                     m[min].push_back(list1[i]);
                 }
