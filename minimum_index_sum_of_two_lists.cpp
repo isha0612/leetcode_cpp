@@ -24,12 +24,12 @@ public:
     }
 };
 
-//another solution
+//another solution O(n2)
 
 class Solution {
 public:
     vector<string> findRestaurant(vector<string>& list1, vector<string>& list2) {
-        map<int, vector<string>> m;
+        unordered_map<int, vector<string>> m;
         int min = INT_MAX;
         for(int i = 0; i < list1.size(); i++) {
             for(int j = 0; j < list2.size(); j++) {
