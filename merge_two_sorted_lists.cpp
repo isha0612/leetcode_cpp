@@ -16,7 +16,8 @@ public:
             if(list1->val <= list2->val) {
                 if(res == NULL) {
                     res = p = list1;
-                } else {
+                } 
+                else {
                     p->next = list1;
                     p = list1;
                 }
@@ -25,33 +26,39 @@ public:
             else if(list1->val > list2->val) {
                 if(res == NULL) {
                     res = p = list2;
-                } else {
+                } 
+                else {
                     p->next = list2;
                     p = list2;
                 }
                 list2 = list2->next;
             }
         }
+        
         while(list1) {
             if(res == NULL) {
-                    res = p = list1;
-                } else {
-                    p->next = list1;
-                    p = list1;
+                res = p = list1;
+            } 
+            else {
+                p->next = list1;
+                p = list1;
             }
             list1 = list1->next;
             p->next = NULL;
         }
+        
         while(list2) {
             if(res == NULL) {
-                    res = p = list2;
-                } else {
-                    p->next = list2;
-                    p = list2;
+                res = p = list2;
+            }
+            else {
+                p->next = list2;
+                p = list2;
             }
             list2 = list2->next;
             p->next = NULL;
         }
+        
         return res;
     }
 };
