@@ -24,3 +24,42 @@ public:
         return ans;
     }
 };
+
+//another solution
+
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int ans1 = leftsearch(nums, target);
+        int ans2 = rightsearch(nums, target);
+        return {ans1, ans2};
+    }
+    int leftsearch(vector<int> nums, int target) {
+        int i = 0, j = nums.size() - 1;
+        int ans = -1;
+        while(i <= j) {
+            int mid = (i + j) / 2;
+            if(nums[mid] > target) j = mid - 1;
+            else if(nums[mid] < target) i = mid + 1;
+            else {
+                ans = mid;
+                j = mid - 1;
+            }
+        }
+        return ans;
+    }
+    int rightsearch(vector<int> nums, int target) {
+        int i = 0, j = nums.size() - 1;
+        int ans = -1;
+        while(i <= j) {
+            int mid = (i + j) / 2;
+            if(nums[mid] > target) j = mid - 1;
+            else if(nums[mid] < target) i = mid + 1;
+            else {
+                ans = mid;
+                i = mid + 1;
+            }
+        }
+        return ans;
+    }
+};
