@@ -4,10 +4,9 @@ public:
         if(a.size() == b.size()) {
             int n = a.size();
             for(int i = 0; i < n; i++) {
-                if(a[i] > b[i])
-                    return true;
-                else if(b[i] > a[i])
-                    return false;
+                if(a[i] == b[i])
+                    continue;
+                return a[i] > b[i];
             }
         }
         return a.size() > b.size();
