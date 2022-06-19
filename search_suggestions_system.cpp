@@ -22,3 +22,32 @@ public:
         return ans;
     }
 };
+
+//another solution
+
+class Solution {
+public:
+    vector<vector<string>> suggestedProducts(vector<string>& products, string searchWord) {
+        vector<vector<string>> ans;
+        set<string> set;
+        for(auto s: products)
+            set.insert(s);
+        int j;
+        for(int k = 1; k <= searchWord.size(); k++) {
+            vector<string> t;
+            for(auto it : set) {
+                string s = it;
+                for(j = 0; j < k && j < s.size(); j++) {
+                    if(s[j] != searchWord[j])
+                        break;
+                }
+                if(j == k)
+                    t.push_back(s);
+                if(t.size() == 3)
+                    break;
+            }
+            ans.push_back(t);
+        }
+        return ans;
+    }
+};
