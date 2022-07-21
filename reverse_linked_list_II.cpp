@@ -42,11 +42,7 @@ public:
             i++;
         }
         head = q;
-        while(p) {
-            temp->next = p;
-            temp = p;
-            p = p->next;
-        }
+        temp->next = p;
         return head;
     }
 };
