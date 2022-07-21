@@ -12,9 +12,10 @@ class Solution {
 public:
     ListNode* insertionSortList(ListNode* head) {
         vector<int> v;
-        while(head) {
-            v.push_back(head->val);
-            head = head->next;
+        ListNode *temp = head;
+        while(temp) {
+            v.push_back(temp->val);
+            temp = temp->next;
         }
         for(int i = 1; i < v.size(); i++) {
             int temp = v[i];
@@ -25,14 +26,10 @@ public:
             }
             v[j + 1] = temp;
         }
-        ListNode *t = new ListNode();
-        for(int i = 0; i < v.size(); i++) {
-            ListNode *q = new ListNode(v[i]);
-            if(!head) head = t = q;
-            else {
-                t->next = q;
-                t = q;
-            }
+        temp = head;
+        for(int i = 0; i < v.size() && temp; i++) {
+            temp->val = v[i];
+            temp = temp->next;
         }
         return head;
     }
