@@ -26,15 +26,10 @@ public:
         int n = matrix.size(), m = matrix[0].size();
         int i = 0;
         while(i + 1 < n) {
-            if(matrix[i][0] < target && matrix[i + 1][0] > target) break;
+            if(matrix[i][0] <= target && matrix[i + 1][0] > target) break;
             i++;
         }
-        while(i >= 0) {
-            bool ans = searchBinary(matrix[i], target);
-            if(ans) return true;
-            i--;
-        }
-        return false;
+        return searchBinary(matrix[i], target);
     }
     
     bool searchBinary(vector<int> &arr, int target) {
