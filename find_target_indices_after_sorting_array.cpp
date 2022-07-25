@@ -21,3 +21,21 @@ public:
         return ans;
     }
 };
+
+//another solution
+
+class Solution {
+public:
+    vector<int> targetIndices(vector<int>& nums, int target) {
+        vector<int> ans;
+        int beforeTarget = 0, totalTargets = 0;
+        for(int i = 0; i < nums.size(); i++) {
+            if(nums[i] < target) beforeTarget++;
+            else if(nums[i] == target) totalTargets++;
+        }
+        for(int i = beforeTarget; i < beforeTarget + totalTargets; i++) {
+            ans.push_back(i);
+        }
+        return ans;
+    }
+};
